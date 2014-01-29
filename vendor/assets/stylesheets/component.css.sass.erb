@@ -214,9 +214,10 @@ body
 .bb-custom-wrapper
   position: fixed
   top: 0
-  left: 0
+  left: 50%
+  margin-left: -700px
   padding: 0 10px
-  width: 100%
+  width: 1400px
   height: 100%
   border-width: 3px 10px
   border-style: solid
@@ -310,9 +311,57 @@ body
     margin: 0
     font-size: 6em
     font-family: "Cardo", serif
+.page-layout-4
+  &.left
+    position: absolute
+    left: 0
+    width: 50%
+    height: 100%
+  &.right
+    position: absolute
+    right: 0
+    width: 50%
+    height: 100%
+  &.p1
+    background: url(<%= asset_path "page1.png"%>) no-repeat center left
+    background-size: cover
+  &.p2
+    background: url(<%= asset_path "page2.png"%>) no-repeat center right
+    background-size: cover
+  &.p3
+    background: url(<%= asset_path "page3.png"%>) no-repeat center left
+    background-size: cover
+  &.p4
+    background: url(<%= asset_path "page4.png"%>) no-repeat center right
+    background-size: cover
+  &.p5
+    background: url(<%= asset_path "page5.png"%>) no-repeat center right
+    background-size: cover
+  &.p6
+    background: url(<%= asset_path "page6.png"%>) no-repeat center right
+    background-size: cover
+  &.p7
+    background: url(<%= asset_path "page7.png"%>) no-repeat center right
+    background-size: cover
+  &.p8
+    background: url(<%= asset_path "page8.png"%>) no-repeat center right
+    background-size: cover
 
+  div
+    padding: 10%
+  h3
+    margin: 0
+    text-transform: uppercase
+    font-weight: 400
+    font-size: 14em
+    font-family: "Six Caps", sans-serif
+  p
+    margin: 0
+    text-indent: 5px
+    font-style: italic
+    font-family: "Cardo", serif
 .page-layout-3
-  &:last-child
+  &:first-child
     position: absolute
     right: 0
     width: 50%
@@ -413,11 +462,11 @@ body
     background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(<%= asset_path "small_cover.jpg"%>), #f6a7a5
     background: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(211, 211, 211, 0.1) 5%, rgba(255, 255, 255, 0.15) 5%, rgba(255, 255, 255, 0.1) 9%, rgba(0, 0, 0, 0.01) 100%), url(<%= asset_path "small_cover.jpg"%>), #f6a7a5
   .inner
-    border-color: #f6a7a5
+    border-color: lightgray
   .cover::before
     background: url(<%= asset_path "spine2.svg"%>)
-    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(<%= asset_path "spine2.svg"%>), #f6a7a5
-    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(<%= asset_path "spine2.svg"%>), #f6a7a5
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(<%= asset_path "spine2.svg"%>), black
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.1) 50%, transparent 100%), url(<%= asset_path "spine2.svg"%>), black
 
 /* border around bookblock same as book cover color
 
@@ -425,7 +474,7 @@ body
   border-color: #009bdb
 
 #book-2
-  border-color: #f6a7a5
+  border-color: lightgray
 
 /****** Transitions *****
 /* Book open / view inside
