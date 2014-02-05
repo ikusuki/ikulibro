@@ -6,7 +6,7 @@
     %title Afinando un sueño, el ikulibro
     = stylesheet_link_tag  "application"
     = csrf_meta_tags
-  %body
+  %body{:data => {:no => {:turbolink=>""}}}
     / Nav Bar
     .row
       .large-12.columns
@@ -14,6 +14,9 @@
           %ul.button-group
             %li
               %a.button{href: "http://www.verkami.com/projects/6537-afinando-un-sueno-el-ikulibro"} Proyecto en Verkami
+            %li{:style => "position: relative; top: 10px"}
+              = image_tag "here.gif"
+              <- la historia aqui
         %h1
           Afinando un sueño
           %small El ikulibro
@@ -43,3 +46,4 @@
               %li
                 %a{href: "http://www.historiasdeunabstracto.com"} Historias de un abstracto
   = javascript_include_tag "application"
+  = render 'pedir_libro_modal'
