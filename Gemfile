@@ -19,7 +19,7 @@ gem 'awesome_print'
 group :production do
   gem 'rails_12factor'
 end
-
+gem 'animate-sass'
 gem 'foundation-rails'
 gem 'quiet_assets'
 
