@@ -15,3 +15,12 @@ $ ->
         complete: (data) ->
           $('#pedirLibro').foundation('reveal', 'close')
           alertify.alert(data.responseText)
+
+  $("#pedir").hover (->
+    $(this).addClass('rubberBand')
+  ), ->
+    $(this).removeClass('rubberBand')
+  $('#aqui').hover (->
+    $(this).addClass('shake')
+    ), ->
+    $(this).removeClass('shake')

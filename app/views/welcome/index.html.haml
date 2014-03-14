@@ -4,13 +4,13 @@
     #scroll-wrap.container
       .main
         #bookshelf.bookshelf
-          %figure
+          %figure.animated.rotateInDownLeft
             .book{"data-book" => "book-2"}
             .buttons
               %a{href: "#"} Abrir
               %a{href: "#"} Detalles
               .next
-                %a#pedir{href: "#", :data=>{"reveal-id" => "pedirLibro"}} Pedir libro
+                %a#pedir.animated{href: "#", :data=>{"reveal-id" => "pedirLibro"}} Pedir libro
             %figcaption
               %h2
                 Afinando un sueño

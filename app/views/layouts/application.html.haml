@@ -13,14 +13,14 @@
     .row
       .large-12.columns
         .nav-bar.right
-          %ul.button-group
+          %ul.button-group.animated.fadeInDownBig
             %li
               %a.button{href: "http://www.verkami.com/projects/6537-afinando-un-sueno-el-ikulibro"} Proyecto en Verkami
-            %li{:style => "position: relative; top: 10px"}
+            %li#aqui.animated{:style => "position: relative; top: 10px"}
               = image_tag "here.gif"
               <- la historia aqui
         %a{href: "/"}
-          %h1
+          %h1.animated.fadeInLeftBig
             Afinando un sueño
             %small El ikulibro
         %hr/
@@ -31,7 +31,7 @@
         = yield
 
     / Footer
-    %footer.row
+    %footer.row.animated.flipInX
       .large-12.columns
         %hr/
         .row
