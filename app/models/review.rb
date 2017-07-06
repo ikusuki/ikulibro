@@ -1,6 +1,9 @@
 class Review < ActiveRecord::Base
 
   has_many :images
-  scope :desc, order("created_at DESC")
+
+  def self.desc
+    order(created_at: :desc)
+  end
 
 end
