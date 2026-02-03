@@ -20,8 +20,10 @@
             %li#aqui.animated
               = image_tag "here.gif"
               < la historia original aqui
+    .row
+      .large-12.columns
         %a{href: "/"}
-          %h1.animated.fadeInLeftBig{style: "width: 550px"}
+          %h1.site-title.animated.fadeInLeftBig
             Afinando un sueño
             %small El ikulibro
         %hr/
@@ -44,7 +46,21 @@
               Diseño y maquetación original:
               %b Fran Valenciano
           .large-6.columns
-            %ul.inline-list.right
+            %ul.inline-list.right.social-links
               %li
-                %a{href: "http://www.ikublog.com"} Ikublog
+                %a.social-link.wordpress{href: "http://www.ikublog.com"}
+                  = image_tag "wordpressicon.png", alt: "WordPress"
+                  %span Ikublog
+              %li
+                %a.social-link.instagram{href: "http://instagram.com/ikusuki", target: "_blank", rel: "noopener"}
+                  = image_tag "instaicon.png", alt: "Instagram"
+                  %span Instagram
+              %li
+                %a.social-link.youtube{href: "https://www.youtube.com/ikusuki", target: "_blank", rel: "noopener"}
+                  = image_tag "youtubeicon.png", alt: "YouTube"
+                  %span YouTube
+              %li
+                %a.social-link.tiktok{href: "https://www.tiktok.com/@ikusukinews", target: "_blank", rel: "noopener"}
+                  = image_tag "tiktokicon.png", alt: "TikTok"
+                  %span TikTok
   = javascript_include_tag "application"

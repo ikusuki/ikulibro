@@ -63,6 +63,7 @@
   };
 
   Book.prototype._initBookBlock = function () {
+    this._prepareSinglePageForMobile();
     this.bb = new BookBlock(this.bbWrapper.querySelector('.bb-bookblock'), {
       speed: 700,
       shadowSides: 0.8,
@@ -170,6 +171,52 @@
 
   Book.prototype._hideDetails = function () {
     classie.remove(this.el, 'details-open');
+  };
+
+  Book.prototype._prepareSinglePageForMobile = function () {
+    if (!window.matchMedia || !window.matchMedia('(max-width: 640px)').matches) {
+      return;
+    }
+
+    var bookblock = this.bbWrapper.querySelector('.bb-bookblock');
+    if (!bookblock) {
+      return;
+    }
+
+    var items = [].slice.call(bookblock.querySelectorAll('.bb-item'));
+    if (!items.length) {
+      return;
+    }
+
+    var fragment = document.createDocumentFragment();
+
+    items.forEach(function (item) {
+      var left = item.querySelector('.bb-custom-side.left');
+      var right = item.querySelector('.bb-custom-side.right');
+
+      if (left) {
+        var leftItem = document.createElement('div');
+        leftItem.className = 'bb-item';
+        var leftClone = left.cloneNode(true);
+        leftClone.classList.remove('right');
+        leftClone.classList.add('left');
+        leftItem.appendChild(leftClone);
+        fragment.appendChild(leftItem);
+      }
+
+      if (right) {
+        var rightItem = document.createElement('div');
+        rightItem.className = 'bb-item';
+        var rightClone = right.cloneNode(true);
+        rightClone.classList.remove('right');
+        rightClone.classList.add('left');
+        rightItem.appendChild(rightClone);
+        fragment.appendChild(rightItem);
+      }
+    });
+
+    bookblock.innerHTML = '';
+    bookblock.appendChild(fragment);
   };
 
   var init = function () {

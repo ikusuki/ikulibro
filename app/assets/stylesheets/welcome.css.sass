@@ -39,3 +39,125 @@ a:hover
   display: flex
   align-items: center
   gap: 6px
+  margin-top: -20px
+.social-links
+  display: flex
+  align-items: center
+  gap: 8px
+  flex-wrap: nowrap
+  li
+    margin: 0
+  a
+    display: inline-flex
+    align-items: center
+    gap: 6px
+    font-weight: normal
+  .social-link.youtube span
+    margin-left: -5px
+    margin-right: 8px
+  img
+    width: 24px
+    height: 24px
+
+@media screen and (min-width: 641px)
+  .social-links .social-link.instagram img,
+  .social-links .social-link.youtube img
+    width: 44px
+    height: 44px
+.site-title
+  width: 550px
+
+@media screen and (min-width: 641px)
+  .bookshelf figcaption
+    transition: transform 0.35s ease, opacity 0.35s ease
+  .bookshelf figure.details-open figcaption
+    transform: translateY(60px)
+    opacity: 0
+    visibility: hidden
+  .csstransformspreserve3d .details ul
+    padding: 15px 30px 15px 70px
+  .details ul li
+    font-weight: 400
+  .details ul li:nth-child(2),
+  .details ul li:nth-child(3)
+    font-size: 12px
+
+@media screen and (max-width: 640px)
+  .nav-bar
+    float: none
+    margin-bottom: 8px
+  .nav-bar.right
+    float: none
+  .nav-bar + a
+    display: block
+  .site-title
+    width: 100%
+    small
+      display: block
+  .bookshelf figure.details-open figcaption
+    opacity: 0
+    visibility: hidden
+  .main
+    max-width: 100%
+  .bookshelf figure
+    width: 100%
+    max-width: 100%
+    padding: 24px 0
+  footer .subheader
+    font-size: 12px
+  .nav-bar .button-group
+    flex-direction: row
+    align-items: center
+    gap: 8px
+    justify-content: flex-end
+  .nav-bar .button-group .button
+    font-size: 13px
+    padding: 8px 12px
+  #aqui
+    font-size: 11px
+    white-space: nowrap
+    align-items: center
+    margin-top: -20px
+  .reveal-modal#pedirLibro
+    left: 50%
+    transform: translateX(-50%)
+    width: 90%
+    max-width: 420px
+  .bb-custom-wrapper
+    left: 0
+    margin-left: 0
+    width: 100%
+    padding: 0 6px
+    border-width: 2px 4px
+  .bb-bookblock
+    width: 100%
+    height: 100%
+  .bb-vertical .bb-page
+    width: 100%
+    left: 0
+  .bb-vertical .bb-content
+    width: 100%
+  .bb-custom-side
+    width: 100%
+  .bb-custom-side.right
+    display: none
+  .page-layout-4.left
+    width: 100%
+  .page-layout-4.right
+    display: none
+  .bb-custom-wrapper .page-layout-4
+    background-size: contain !important
+    background-position: center top
+    background-color: #fff
+  .csstransformspreserve3d .details ul
+    padding: 60px 30px 0 90px
+  .details
+    max-height: 100vh
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+  .details ul
+    padding-top: 30px
+  .details ul li
+    margin-bottom: 8px
+  .details ul li:first-child
+    font-size: 12px
