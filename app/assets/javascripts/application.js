@@ -11,9 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require modernizr.custom
 //= require bookblock.min
 //= require classie
@@ -21,4 +19,6 @@
 //= require alertify
 //= require welcome
 
-$(function(){ $(document).foundation(); });
+$(function () {
+  $(document).foundation();
+});

@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.desc.all
+    @reviews = ReviewStore.all_desc
   end
 
 end

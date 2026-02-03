@@ -1,4 +1,4 @@
-Ikulibro::Application.routes.draw do
+Rails.application.routes.draw do
 
   root 'welcome#index'
   put 'contacto' => 'contacts#send_contact'

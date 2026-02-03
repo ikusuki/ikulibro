@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Ikulibro::Application.config.secret_key_base = '0921cb5840b6e3fde5c574a03e61c8a15bced7c5546d53c4af79cc2a6ceb3ca01cc99a3179f977dd4f589d76d3aa10b0b94dc791338421f0387dd28c93181777'
+Rails.application.config.secret_key_base = ENV.fetch("SECRET_KEY_BASE")

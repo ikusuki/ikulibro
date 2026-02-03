@@ -1,5 +1,11 @@
 == README
 
+=== Requirements
+
+* Ruby 3.3.x
+* Rails 7.1.x
+* MySQL 8
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

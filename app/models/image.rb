@@ -1,3 +1,3 @@
-class Image < ActiveRecord::Base
+class Image < ApplicationRecord
   belongs_to :review
 end

@@ -1,5 +1,4 @@
-class ContactMailer < ActionMailer::Base
-  default from: "oskar@ikusuki.com"
+class ContactMailer < ApplicationMailer
 
   def contact_email (nombre, email, address, comments)
     @nombre = nombre
