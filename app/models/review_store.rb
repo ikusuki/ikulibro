@@ -73,6 +73,7 @@ class ReviewStore
       if csv_url?
         entries = load_from_csv
         return entries if entries
+        raise "REVIEWS_CSV_URL set but CSV could not be loaded"
       end
 
       load_from_yaml
@@ -118,11 +119,17 @@ class ReviewStore
     end
 
     def load_from_csv
-      uri = URI.parse(csv_url)
-      response = Net::HTTP.get_response(uri)
-      return nil unless response.is_a?(Net::HTTPSuccess)
+      response = fetch_csv_response(csv_url)
+      unless response&.is_a?(Net::HTTPSuccess)
+        Rails.logger.warn("ReviewStore CSV HTTP error: #{response&.code} #{response&.message}")
+        return nil
+      end
 
-      CSV.parse(response.body, headers: true).map do |row|
+      csv_text = response.body.dup
+      csv_text.force_encoding("UTF-8")
+      csv_text = csv_text.encode("UTF-8", invalid: :replace, undef: :replace, replace: "")
+
+      CSV.parse(csv_text, headers: true).map do |row|
         images = split_images(row["images"]).map.with_index(1) do |url, idx|
           ReviewImage.new(
             id: "#{row['id']}-#{idx}",
@@ -141,13 +148,30 @@ class ReviewStore
           images: images
         )
       end
+    rescue CSV::MalformedCSVError => e
+      Rails.logger.warn("ReviewStore CSV malformed: #{e.message}")
+      Rails.logger.warn("ReviewStore CSV preview: #{response&.body&.slice(0, 200)}")
+      nil
     rescue StandardError => e
       Rails.logger.warn("ReviewStore CSV load failed: #{e.class}: #{e.message}")
+      Rails.logger.warn("ReviewStore CSV preview: #{response&.body&.slice(0, 200)}")
       nil
     end
 
     def split_images(value)
       value.to_s.split("|").map(&:strip).reject(&:empty?)
+    end
+
+    def fetch_csv_response(url, limit = 5)
+      return nil if limit <= 0
+
+      uri = URI.parse(url)
+      response = Net::HTTP.get_response(uri)
+      return response unless response.is_a?(Net::HTTPRedirection)
+
+      location = response["location"]
+      Rails.logger.info("ReviewStore CSV redirect: #{response.code} -> #{location}")
+      fetch_csv_response(location, limit - 1)
     end
   end
 end

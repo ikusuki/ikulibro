@@ -1,4 +1,5 @@
 Ikulibro::Application.configure do
+  ENV["REVIEWS_CSV_URL"] ||= "https://docs.google.com/spreadsheets/d/e/2PACX-1vSkEpJ6bzNjNtznsAxlzheDYdKeD7NI3T-JLnS40t-O0ZbSA3yCc-OU7Lr0LQdUspRBS3xOJ4mtfB9l/pub?output=csv"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
