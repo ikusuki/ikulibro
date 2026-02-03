@@ -2,17 +2,17 @@
 .row
   .large-12.columns
     %h4#reacciones.animated.bounceInRight{:style => "text-align:right"}
-      %a{href: "/reviews"} Reacciones
+      %a{href: "/reviews"} Reseñas
     #scroll-wrap.container
       .main
         #bookshelf.bookshelf
           %figure.animated.rotateInDownLeft
             .book{"data-book" => "book-2"}
             .buttons
-              %a{href: "#"} Abrir
+              %a{href: "#"} Abrir muestra (PC)
               %a{href: "#"} Detalles
               .next
-                %a#pedir.animated{href: "#", :data=>{"reveal-id" => "pedirLibro"}} Pedir libro
+                %a#pedir.animated{href: "#", :data=>{"reveal-id" => "pedirLibro"}} Enviar reseña
             %figcaption
               %h2
                 Afinando un sueño
@@ -20,9 +20,13 @@
             .details
               %ul
                 %li Autoeditado
-                %li Diciembre de 2013
-                %li 244 páginas
-                %li Con mujer, hijo e hipoteca en Tokio, Oskar Díaz nos cuenta a través de pequeñas historias como logró encarrilar su sueño de vivir en Japón hace ya 8 años.
+                %li dic 2013 / ene 2026
+                %li 447 páginas
+                %li.small-details
+                  Con mujer, hijos e hipoteca en Tokio, Oskar Díaz nos cuenta a través de pequeñas historias como logró encarrilar su sueño de vivir en Japón hace ya 19 años.
+                  %br
+                  %br
+                  Disponible en papel y en formato electrónico.
 
       / /main
     / /container

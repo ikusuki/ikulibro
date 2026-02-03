@@ -1,7 +1,7 @@
 $(function () {
   $("#send").on("click", function () {
-    if (!$("#nombre").val() || !$("#email").val()) {
-      alertify.error("Hombre, digo yo que el nombre y el email por lo menos ya me dirás, ¿no?");
+    if (!$("#nombre").val()) {
+      alertify.error("Hombre, digo yo que el nombre por lo menos ya me dirás, ¿no?");
       return;
     }
 
@@ -12,7 +12,6 @@ $(function () {
         _method: "put",
         name: $("#nombre").val(),
         email: $("#email").val(),
-        address: $("#address").val(),
         comments: $("#comments").val(),
       },
       complete: function (data) {

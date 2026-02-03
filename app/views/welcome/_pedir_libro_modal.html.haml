@@ -1,24 +1,19 @@
 #pedirLibro.reveal-modal{:data => {'reveal' => true}}
   %p
-    Los libros, gastos de envío incluidos, salen a 20€.
-  %p
-    La manera de pedirlos es fácil: me pasas en este formulario tu dirección y tu email y luego ya me pongo yo en contacto contigo para avisarte del envío.
+    Si has leído el libro, a mi me encantará saber qué te ha parecido, y si me dejas, la publico aquí junto a todas las demás.
   %form
     .row
-      .large-6.columns
+      .large-12.columns
         %label Tu nombre
         %input#nombre{:type=> "text", :required => true}
-      .large-6.columns
-        %label Tu email
-        %input#email{:type=> "email", :required => true}
     .row
       .large-12.columns
-        %label Dirección para el cartero
-        %textarea#address{:style => "height:80px"}
+        %label Tu email (opcional)
+        %input#email{:type=> "email"}
     .row
       .large-12.columns
-        %label Otras cosicas a tener en cuenta
-        %textarea#comments{:style => "height:80px", :placeholder=> "Aprovecha para contarme aquí cosas o preguntar lo que sea!"}
+        %label Tu reseña
+        %textarea#comments{:style => "height:180px", :placeholder=> "Aprovecha para contarme aquí cosas o preguntar lo que sea!"}
     .row
       .large-12.columns.text-center
         %a#send.button{:href => "#"} Enviar
