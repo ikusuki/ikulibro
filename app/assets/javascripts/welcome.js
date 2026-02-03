@@ -5,14 +5,18 @@ $(function () {
       return;
     }
 
+    var csrfToken = $('meta[name="csrf-token"]').attr("content");
+
     $.ajax({
-      type: "POST",
+      type: "PUT",
       url: "/contacto",
       data: {
-        _method: "put",
         name: $("#nombre").val(),
         email: $("#email").val(),
         comments: $("#comments").val(),
+      },
+      headers: {
+        "X-CSRF-Token": csrfToken,
       },
       complete: function (data) {
         $("#pedirLibro").foundation("reveal", "close");
