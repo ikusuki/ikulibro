@@ -106,14 +106,28 @@ a:hover
     letter-spacing: 0.6px
     text-transform: uppercase
     font-family: "Farsan", cursive
-  .insta-embed
+  .insta-grid
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 20px
+    justify-items: center
+    align-items: start
+  .insta-card
+    width: 100%
+    max-width: 340px
+    text-align: center
     display: flex
-    justify-content: center
     flex-direction: column
     align-items: center
-    blockquote.instagram-media
-      max-width: 250px
-      width: 100%
+    padding: 12px
+    border-radius: 12px
+    background: rgba(255, 255, 255, 0.8)
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.08)
+  blockquote.instagram-media
+    width: 100% !important
+    max-width: 320px !important
+    margin: 0 auto !important
+    position: relative !important
   .insta-title
     margin: 0 0 10px
     font-size: 20px
@@ -151,7 +165,7 @@ a:hover
     background-size: contain !important
     background-position: center center
 
-@media screen and (max-width: 640px)
+@media screen and (max-width: 900px)
   .nav-bar
     float: none
     margin-bottom: 8px
@@ -235,6 +249,27 @@ a:hover
     font-size: 12px
   .details .small-details
     font-size: 16px
+  .insta-grid
+    display: grid !important
+    grid-template-columns: 1fr !important
+    justify-items: center
+  .insta-card
+    max-width: 100%
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+  .insta-videos blockquote.instagram-media
+    max-width: 250px !important
+    width: 100% !important
+    margin-left: auto !important
+    margin-right: auto !important
+  .insta-videos iframe
+    max-width: 250px !important
+    width: 100% !important
+    min-width: 0 !important
+  .insta-videos
+    text-align: center
 
 @media screen and (max-width: 900px) and (orientation: landscape)
   .bb-custom-wrapper

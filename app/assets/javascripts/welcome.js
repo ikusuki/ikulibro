@@ -46,4 +46,6 @@ $(function () {
   setInterval(function () {
     $("#reacciones").removeClass("bounceInRight").toggleClass("tada");
   }, 5000);
+
+
 });
