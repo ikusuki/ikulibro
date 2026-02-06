@@ -9,7 +9,7 @@ a
 a:hover
   color: black
 .next
-  margin-top: 20px
+  margin-top: 40px
   a
     background-color: white
     border: 2px solid black
@@ -17,6 +17,156 @@ a:hover
   a:hover
     background-color: lightgray
     color: black
+.amazon-links
+  display: flex
+  justify-content: center
+  gap: 12px
+  margin-bottom: 12px
+  margin-top: 0
+.amazon-label
+  margin: 0 0 10px
+  text-align: center
+  font-size: 14px
+  font-weight: 700
+  line-height: 1
+.amazon-btn
+  display: flex
+  align-items: stretch
+  justify-content: space-between
+  gap: 0
+  padding: 0
+  min-width: 180px
+  border: none
+  border-radius: 999px
+  background: #f3d31a
+  color: #111
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 15px
+  font-weight: 600
+  text-decoration: none
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15)
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease
+  text-transform: none !important
+  letter-spacing: 0 !important
+  overflow: hidden
+.next .amazon-btn
+  border: none !important
+  display: flex !important
+  font-size: 13px !important
+  background: #f3d31a !important
+  background-color: #f3d31a !important
+  background-image: none !important
+.next .amazon-btn:hover
+  background: #f3d31a !important
+  background-color: #f3d31a !important
+  background-image: none !important
+.amazon-btn:hover
+  transform: translateY(-2px)
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18)
+  filter: none
+  background: #f3d31a
+.amazon-btn:focus-visible
+  outline: 2px solid rgba(0, 0, 0, 0.35)
+  outline-offset: 2px
+.amazon-btn.disabled
+  background: #e6e6e6
+  color: #666
+  box-shadow: none
+  opacity: 1
+  cursor: default
+  pointer-events: none
+.amazon-btn.jp
+  background: #f3d31a
+.amazon-btn.es
+  background: #f3d31a
+.amazon-btn img
+  display: inline-block
+  width: 40px
+  height: 40px
+  opacity: 0.9
+.amazon-btn small
+  font-size: 11px
+  font-weight: 400
+  color: #555
+.amazon-btn .btn-text
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  gap: 6px
+  padding: 6px 12px
+  flex: 1
+  text-align: center
+  flex-wrap: nowrap
+.amazon-btn.es .btn-text
+  flex-direction: column
+  align-items: center
+  gap: 2px
+.amazon-btn .btn-text span,
+.amazon-btn .btn-text small
+  display: inline-block
+.amazon-btn .btn-icon
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 65px
+  height: 100%
+  background: rgba(255, 255, 255, 0.65)
+  border-left: 1px solid rgba(0, 0, 0, 0.08)
+  margin-left: auto
+  margin-right: -10px
+.bookshelf figure.details-open .buttons,
+.bookshelf figure.details-open .next
+  opacity: 0
+  pointer-events: none
+.review-btn
+  font-family: inherit
+  font-size: 20px
+  background: royalblue
+  color: white
+  margin-top: 30px
+  padding: 0.7em 1em
+  padding-left: 0.9em
+  display: inline-grid
+  grid-auto-flow: column
+  grid-template-columns: auto 1fr
+  align-items: center
+  border: none
+  border-radius: 16px
+  overflow: hidden
+  transition: all 0.2s
+  cursor: pointer
+  text-decoration: none
+  column-gap: 0.3em
+.review-btn .svg-wrapper-1
+  display: inline-flex
+  align-items: center
+  transition: transform 0.3s ease-in-out
+.review-btn span
+  display: block
+  margin-left: 0
+  transition: all 0.3s ease-in-out
+.review-btn svg
+  display: block
+  transform-origin: center center
+  transition: transform 0.3s ease-in-out
+.review-btn:hover .svg-wrapper
+  animation: fly-1 0.6s ease-in-out infinite alternate
+.review-btn:hover svg
+  transform: rotate(45deg) scale(1.1)
+.review-btn:hover span
+  opacity: 0
+.review-btn:hover .svg-wrapper-1
+  grid-column: 1 / -1
+  justify-self: center
+  transform: translateX(70px)
+.review-btn:active
+  transform: scale(0.95)
+@keyframes fly-1
+  from
+    transform: translateY(0.1em)
+  to
+    transform: translateY(-0.1em)
 .reveal-modal#pedirLibro
   z-index: 99999
   width: 500px
@@ -76,6 +226,8 @@ a:hover
     height: 44px
 .site-title
   width: 550px
+.bb-custom-wrapper
+  background: #fff
 .download-book
   display: flex
   align-items: center
@@ -104,10 +256,10 @@ a:hover
   margin: 22px auto 12px
   padding: 16px 18px
   max-width: 760px
-  border: 2px solid rgba(0, 0, 0, 0.7)
+  border: none
   border-radius: 12px
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(247, 244, 222, 0.9))
-  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.08)
+  background: #fff
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12)
   h5
     margin: 0 0 8px
     font-size: 24px
@@ -139,10 +291,10 @@ a:hover
   margin: 18px auto 12px
   padding: 16px 18px
   max-width: 760px
-  border: 2px solid rgba(0, 0, 0, 0.7)
+  border: none
   border-radius: 12px
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(247, 244, 222, 0.9))
-  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.08)
+  background: #fff
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12)
   h5
     margin: 0 0 8px
     font-size: 24px
@@ -155,17 +307,17 @@ a:hover
     gap: 20px
     justify-items: center
     align-items: start
-  .insta-card
-    width: 100%
-    max-width: 340px
-    text-align: center
-    display: flex
-    flex-direction: column
-    align-items: center
-    padding: 12px
-    border-radius: 12px
-    background: rgba(255, 255, 255, 0.8)
-    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.08)
+.insta-card
+  width: 100%
+  max-width: 340px
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 12px
+  border-radius: 12px
+  background: rgba(255, 255, 255, 0.8)
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12)
   .yt-frame
     width: 100%
     max-width: 320px
@@ -239,32 +391,6 @@ a:hover
     background-size: contain !important
     background-position: center center
 
-@media screen and (max-height: 700px)
-  .bb-custom-wrapper
-    left: 0
-    margin-left: 0
-    width: 100%
-    height: 100vh
-    padding: 0 8px
-  .bb-bookblock
-    width: 100%
-    height: 100%
-  .bb-vertical .bb-page
-    width: 100%
-    left: 0
-  .bb-vertical .bb-content
-    width: 100%
-  .bb-custom-side
-    width: 100%
-  .bb-custom-side.right
-    display: none
-  .page-layout-4.left
-    width: 100%
-  .page-layout-4.right
-    display: none
-  .bb-custom-wrapper .page-layout-4
-    background-size: contain !important
-    background-position: center center
 
 @media screen and (max-width: 900px)
   .nav-bar

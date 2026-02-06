@@ -315,8 +315,7 @@
     }
 
     var isNarrow = window.matchMedia('(max-width: 640px)').matches;
-    var isShort = window.matchMedia('(max-height: 700px)').matches;
-    if (!isNarrow && !isShort) {
+    if (!isNarrow) {
       return;
     }
 
